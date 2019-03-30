@@ -1,17 +1,10 @@
 """Create a sentence with random capitalization"""
-import re
 from itertools import cycle
 from random import random
-
-memes = frozenset([
-    'blockchain', 'coinbase', r'cloud\s+comput(e|ing)', r'machine\s+learning', r'donald\s+(?:j\.?\s+)?trump',
-    r'hacker\s*news', r'web\s*scale',
-])
 
 
 def register(bot):
     bot.listen(r'^!spongebob(?: (.*))?', spongemock)
-    bot.listen(r'(.*(?:{}).*)'.format('|'.join(memes)), spongemock, flags=re.IGNORECASE)
 
 
 def spongebobify(text):
